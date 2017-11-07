@@ -2,16 +2,18 @@
 
 <% @wished_items.each do |wi| %>
     <div class="wishlist_block">
-        <div class="item">
-          <div>
+      <div class="item">
+        <div class="item-card col-md-2">
+          <div class="row destroy-btn">
             <a href="/destroy_wishes?product=<%=wi.id %>"  rel="nofollow">
-              <span class="glyphicon glyphicon-remove" aria-hidden="false"></span>
+              <span class="glyphicon glyphicon-remove pull-right" aria-hidden="false"></span>
             </a>
           </div>
-          <div class="blocked order-title"><%= wi.name%></div>
-          <div class="blocked order-image"><%= link_to (image_tag wi.avatar.url(:medium)), product_path(wi.id) %></div>
-          <div class="blocked order-footer"><%= wi.description%></div>
+          <div class="blocked order-title"><%= wi.name.capitalize%></div>
+          <div class="blocked shadow order-image"><%= link_to (image_tag wi.avatar.url(:medium)), product_path(wi.id) %></div>
+          <div class="blocked order-footer"><%= truncate(wi.description.capitalize, :length => 30) %></div>
         </div>
+      </div>
     </div>
 <% end %>
 

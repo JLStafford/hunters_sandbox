@@ -1,4 +1,5 @@
 .item{
+  font-family: Bangla;
   float:left;
   margin: 10px;
   width:80px;
@@ -11,6 +12,25 @@
   }
   .order-footer{font-size:8px;}
 }
+
+.item-card {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  inline-size: auto;
+  text-align: center;
+  box-shadow: 5px 5px 5px #858585;
+}
+
+.destroy-btn {
+  margin: 0;
+}
+
+.shadow {
+  box-shadow: 0 0 2px #858585;
+  z-index: 5;
+}
+
 
 .no-border{border:none; }
 
@@ -61,18 +81,18 @@ body#splash_body{
   font-family: Inconsolata;
 }
 
-.btn-buy-now, .btn-hntrs-red{
+.btn-buy-now, .btn-hntrs-red {
   background-color: #B00100;
   color: #fff;
 }
 
-.button-container{
+.button-container {
   width: 365px;
   height: 50px;
   clear:both;
 }
 
-.wishlist_block{
+.wishlist_block, .cartlist_block {
   float:left;
   margin-right: 80px;
   margin-bottom: 100px;

@@ -1,15 +1,19 @@
+<h3> Cart</h3>
+
 <% current_user.orders.each do |order| %>
     <% if order.product.present? %>
-        <div class="item">
-          <div>
+      <div class="item cartlist_block">
+        <div class="item-card col-md-2">
+          <div class="row destroy-btn">
             <a href="/orders/<%=order.id %>" data-method="delete" rel="nofollow">
-              <span class="glyphicon glyphicon-remove" aria-hidden="false"></span>
+              <span class="glyphicon glyphicon-remove pull-right" aria-hidden="false"></span>
             </a>
           </div>
-          <div class="blocked order-title"><%= order.product.name%></div>
-          <div class="blocked order-image"><%= link_to (image_tag order.product.avatar.url(:medium)), product_path(order.product.id) %></div>
-          <div class="blocked order-footer"><%= order.product.description%></div>
+          <div class="blocked order-title"><%= order.product.name.capitalize%></div>
+          <div class="blocked shadow order-image"><%= link_to (image_tag order.product.avatar.url(:medium)), product_path(order.product.id) %></div>
+          <div class="blocked order-footer"><%= truncate(order.product.description.capitalize, :length => 30) %></div>
           <div class="blocked order-footer"><%= time_limit(order) %></div>
         </div>
+      </div>
   <% end %>
 <% end %>

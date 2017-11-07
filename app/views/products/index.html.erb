@@ -24,7 +24,7 @@
       <% @products.each do |product| %>
         <tr>
           <td><%= link_to (image_tag product.avatar.url(:thumb), style:"height:50px"),product %></td>
-          <td><%= product.name %></td>
+          <td><%= link_to product.name, product %></td>
           <td><%= product.price %></td>
           <td><%= product.active %></td>
           <td class="actions">
